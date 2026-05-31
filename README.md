@@ -20,7 +20,23 @@ Otvor [http://localhost:3000](http://localhost:3000).
 
 ## Deploy
 
-Odporúčané: **Vercel** na doménu `mamymimodavu.sk` (DNS presmerovanie z BaseKit).
+**Produkcia (Vercel):** https://mamymimodavu-web.vercel.app
+
+**GitHub:** https://github.com/mamymimodavu/mamymimodavu-web
+
+Každý push na `main` spustí automatický deploy cez Vercel Git integráciu.
+
+### Prepojenie domény mamymimodavu.sk
+
+1. Vercel → projekt **mamymimodavu-web** → **Settings → Domains**
+2. Pridaj `mamymimodavu.sk` a `www.mamymimodavu.sk`
+3. V DNS (Websupport) nastav podľa Vercel:
+   - `@` → A záznam na IP od Vercel, alebo
+   - `@` → ALIAS/ANAME na `cname.vercel-dns.com` (ak registrátor podporuje)
+   - `www` → CNAME na `cname.vercel-dns.com`
+4. Po overení DNS vypni BaseKit hosting pre starý web
+
+**Mapa** zostáva na `mapa.mamymimodavu.sk` (samostatný projekt).
 
 ## Ďalšie kroky
 

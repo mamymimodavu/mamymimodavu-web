@@ -10,14 +10,7 @@ export const metadata: Metadata = {
 
 export default function StorePage() {
   return (
-    <div className="page">
-      <div className="page-card" style={{ marginBottom: "1.25rem" }}>
-        <h1>Obchod</h1>
-        <p className="lead">
-          Knihy a materiály, ktoré vychádzajú z praxe férového rodičovstva. Objednávku dohodneme
-          individuálne.
-        </p>
-      </div>
+    <section className="store-page">
       <div className="product-grid">
         {products.map((product) => (
           <article key={product.slug} className="product-card">
@@ -41,6 +34,6 @@ export default function StorePage() {
           </article>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

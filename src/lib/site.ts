@@ -1,4 +1,4 @@
-export const SITE_NAME = "mamy mimo davu";
+export const SITE_NAME = "mamymimodavu";
 export const SITE_TAGLINE =
   "Férové rodičovstvo, láskavý prístup. Každá cesta sa začína prvým krokom, urobme ho spolu.";
 export const MAP_URL = "https://mapa.mamymimodavu.sk";
@@ -16,5 +16,5 @@ export const MAIN_NAV: NavItem[] = [
   { href: "/blog", label: "Blog" },
   { href: "/advent", label: "Férové rodičovstvo" },
   { href: "/store", label: "Obchod" },
-  { href: MAP_URL, label: "Mapa", external: true },
+  { href: MAP_URL, label: "Ihriská", external: true },
 ];

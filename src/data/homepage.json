@@ -1,0 +1,26 @@
+{
+  "sections": [
+    {
+      "type": "split",
+      "image": "https://files.vlastnawebstranka.websupport.sk/f4/03/f403d200-141f-4552-89d5-d57018e5b303.jpeg",
+      "title": "Na online kávu s Belkou",
+      "body": "Nie som odborník. Som mama dvoch vlastných a dvoch nevlastných detí, ktorá sa každý deň vzdeláva a aplikuje informácie do praxe. Som nadšenec rešpektujúceho rodičovstva, som nadšenec neurovedy, som nadšenec detskej vývojovej psychológie. Ak ťa zaujíma, ako robím veci ja a chceš sa inšpirovať, si tu správne. Ak si chceš len pokecať s niekým, kto ti je názorovo blízky, si tu správne. Ak sa chceš len opýtať na môj názor, si tu správne. Ak toto čítaš, si tu správne :)",
+      "linkHref": "/store",
+      "linkLabel": "ŤUK"
+    },
+    {
+      "type": "hero",
+      "background": "https://files.vlastnawebstranka.websupport.sk/a6/1c/a61c1a6c-7515-4601-9ddb-892897f4a18d.png",
+      "kicker": "MAMY MIMO DAVU",
+      "body": "Na instagrame sme založili profil Mamy mimo davu, kde sme týždeň po týždni komentovali tehotenstvo. Všetkých 40 týždňov nájdete v sekcii IGTV. Aktuálne sa na profile Anabela venuje detským témam.",
+      "sideImage": "https://files.vlastnawebstranka.websupport.sk/c1/6a/c16a2944-ad55-4582-a14d-b726a37060d1.png",
+      "ctaLabel": "Instagram",
+      "ctaHref": "https://www.instagram.com/mamy_mimo_davu/"
+    },
+    {
+      "type": "promo",
+      "title": "Jedálny lístok - týždenný, VZOR",
+      "body": "Ak sa ti nechce hľadať alebo vyrábať vlastný, stiahni si náš, veľmi jednoduchý, jedálny lístok :)"
+    }
+  ]
+}

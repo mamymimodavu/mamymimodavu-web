@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import BrandLogo from "@/components/BrandLogo";
-import { MAIN_NAV } from "@/lib/site";
+import { MAIN_NAV, SITE_NAME } from "@/lib/site";
 import { applyTheme, readTheme, type Theme } from "@/lib/theme";
 
 export default function SiteHeader() {
@@ -28,13 +28,52 @@ export default function SiteHeader() {
 
   return (
     <header className="site-header">
-      <div className="site-header-bar">
-        <Link href="/" className="site-header-brand" aria-label="mamy mimo davu — domov">
+      <div className="site-header-inner">
+        <Link href="/" className="site-header-brand" aria-label={`${SITE_NAME} — domov`}>
           <BrandLogo />
-          <span className="site-header-name">mamy mimo davu</span>
+          <span className="site-header-name">{SITE_NAME}</span>
         </Link>
 
-        <div className="site-header-center">
+        <button
+          type="button"
+          className="site-nav-toggle"
+          aria-expanded={menuOpen}
+          aria-controls="site-nav"
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          Menu
+        </button>
+
+        <nav
+          id="site-nav"
+          className={`site-nav ${menuOpen ? "site-nav--open" : ""}`}
+          aria-label="Hlavná navigácia"
+        >
+          {MAIN_NAV.map((item) => {
+            const active =
+              !item.external &&
+              (item.href === "/" ? pathname === "/" : pathname.startsWith(item.href));
+            const className = `site-nav-link ${active ? "site-nav-link--active" : ""}`;
+
+            if (item.external) {
+              return (
+                <a key={item.href} href={item.href} className={className} target="_blank" rel="noreferrer">
+                  {item.label}
+                </a>
+              );
+            }
+
+            return (
+              <Link key={item.href} href={item.href} className={className}>
+                {item.label}
+              </Link>
+            );
+          })}
+
+          <Link href="/store/cart" className="site-nav-link site-nav-link--cart">
+            Košík
+          </Link>
+
           <button
             type="button"
             className="theme-toggle"
@@ -53,43 +92,8 @@ export default function SiteHeader() {
               </svg>
             )}
           </button>
-        </div>
-
-        <button
-          type="button"
-          className="site-nav-toggle"
-          aria-expanded={menuOpen}
-          aria-controls="site-nav"
-          onClick={() => setMenuOpen((open) => !open)}
-        >
-          Menu
-        </button>
+        </nav>
       </div>
-
-      <nav
-        id="site-nav"
-        className={`site-nav ${menuOpen ? "site-nav--open" : ""}`}
-        aria-label="Hlavná navigácia"
-      >
-        {MAIN_NAV.map((item) => {
-          const active = !item.external && (item.href === "/" ? pathname === "/" : pathname.startsWith(item.href));
-          const className = `site-nav-link ${active ? "site-nav-link--active" : ""}`;
-
-          if (item.external) {
-            return (
-              <a key={item.href} href={item.href} className={className} target="_blank" rel="noreferrer">
-                {item.label}
-              </a>
-            );
-          }
-
-          return (
-            <Link key={item.href} href={item.href} className={className}>
-              {item.label}
-            </Link>
-          );
-        })}
-      </nav>
     </header>
   );
 }

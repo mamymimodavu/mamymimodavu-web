@@ -39,11 +39,11 @@ export default async function BlogPostPage({ params }: Props) {
   if (!post) notFound();
 
   return (
-    <div className="page page--narrow">
-      <Link href="/blog" className="btn btn-secondary" style={{ marginBottom: "1rem" }}>
-        ← Späť na blog
-      </Link>
-      <article className="page-card">
+    <article className="blog-article">
+      <div className="blog-article-inner">
+        <Link href="/blog" className="blog-article-back">
+          ← Späť na blog
+        </Link>
         {post.image && (
           <Image
             src={post.image}
@@ -51,13 +51,12 @@ export default async function BlogPostPage({ params }: Props) {
             width={960}
             height={540}
             className="blog-card-image"
-            style={{ borderRadius: "var(--radius-md)", marginBottom: "1rem" }}
           />
         )}
         <h1>{post.title}</h1>
         {post.description && <p className="lead">{post.description}</p>}
         <Prose>{renderParagraphs(post.body)}</Prose>
-      </article>
-    </div>
+      </div>
+    </article>
   );
 }

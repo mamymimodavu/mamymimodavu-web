@@ -1,0 +1,34 @@
+{
+  "staticPaths": [
+    "/",
+    "/advent",
+    "/anabela",
+    "/ebook-na-ceste",
+    "/mesacny-program",
+    "/store",
+    "/store/cart",
+    "/terms-and-conditions",
+    "/terms-and-conditions1",
+    "/ďakovná-stránka",
+    "/ďakujeme-za-váš-záujem"
+  ],
+  "blogPages": [
+    "/blog",
+    "/blog/page/2"
+  ],
+  "blogTags": [
+    "/blog/tags/domškoláci"
+  ],
+  "blogPosts": [
+    "/blog/3-tipy-na-zdravé-mňamky-pre-deti",
+    "/blog/a-vaša-ako-spí",
+    "/blog/ako-sa-učíme-my-písmená-a-čísla",
+    "/blog/koronavírus-a-pôrod",
+    "/blog/poučí-sa-dieťa-z-vlastných-chýb",
+    "/blog/to-dieťa-ti-skáče-po-hlave"
+  ],
+  "products": [
+    "/store/product/férové-rodičovstvo",
+    "/store/product/na-kávičku-s-belkou"
+  ]
+}

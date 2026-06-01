@@ -1,6 +1,25 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      {
+        source: "/store/product/:slug",
+        destination: "/store/:slug",
+        permanent: true,
+      },
+      {
+        source: "/Ihriská",
+        destination: "https://mapa.mamymimodavu.sk",
+        permanent: false,
+      },
+      {
+        source: "/Ihriska",
+        destination: "https://mapa.mamymimodavu.sk",
+        permanent: false,
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       {

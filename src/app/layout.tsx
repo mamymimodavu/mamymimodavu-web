@@ -1,30 +1,40 @@
 import type { Metadata } from "next";
-import SiteFooter from "@/components/SiteFooter";
-import SiteHeader from "@/components/SiteHeader";
-import { SITE_NAME, SITE_TAGLINE } from "@/lib/site";
-import { themeInitScript } from "@/lib/theme";
+import BaseKitFooter from "@/components/basekit/BaseKitFooter";
+import BaseKitHeader from "@/components/basekit/BaseKitHeader";
+import BaseKitScripts from "@/components/basekit/BaseKitScripts";
+import { siteHeadAssets } from "@/lib/site-content";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://mamymimodavu.sk"),
   title: {
-    default: SITE_NAME,
-    template: `%s | ${SITE_NAME}`,
+    default: "mamymimodavu",
+    template: "%s | mamymimodavu",
   },
-  description: SITE_TAGLINE,
+  icons: siteHeadAssets.favicon ? { icon: siteHeadAssets.favicon } : undefined,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="sk" suppressHydrationWarning>
+    <html lang="sk" className="no-js">
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        {/* eslint-disable-next-line @next/next/no-css-tags */}
+        <link rel="stylesheet" href="/basekit-legacy.css" />
+        <link
+          rel="stylesheet"
+          href="https://55b558c7-resources.vlastnawebstranka.websupport.sk/25b750331a/compiled/photo-swipe.css"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.remove('no-js');",
+          }}
+        />
       </head>
       <body>
-        <div className="site-shell">
-          <SiteHeader />
-          <main className="site-main">{children}</main>
-          <SiteFooter />
-        </div>
+        <BaseKitHeader />
+        {children}
+        <BaseKitFooter />
+        <BaseKitScripts />
       </body>
     </html>
   );

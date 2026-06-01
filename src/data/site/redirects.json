@@ -1,0 +1,12 @@
+[
+  {
+    "source": "/Ihriská",
+    "destination": "https://mapa.mamymimodavu.sk",
+    "permanent": false
+  },
+  {
+    "source": "/Ihriska",
+    "destination": "https://mapa.mamymimodavu.sk",
+    "permanent": false
+  }
+]

@@ -1,20 +1,16 @@
 import type { Metadata } from "next";
-import BlogCard from "@/components/BlogCard";
-import { blogPosts } from "@/lib/posts";
+import BaseKitSitePage from "@/components/basekit/BaseKitSitePage";
+import { getSitePage } from "@/lib/site-content";
 
-export const metadata: Metadata = {
-  title: "Blog",
-  description: "Články o férovom rodičovstve, spánku, učení a každodennom živote s deťmi.",
-};
+const page = getSitePage("/blog");
+
+export const metadata: Metadata = page
+  ? {
+      title: page.meta.title,
+      description: page.meta.description,
+    }
+  : { title: "Blog" };
 
 export default function BlogPage() {
-  return (
-    <section className="home-blog">
-      <div className="home-blog-inner">
-        {blogPosts.map((post) => (
-          <BlogCard key={post.slug} post={post} layout="list" />
-        ))}
-      </div>
-    </section>
-  );
+  return <BaseKitSitePage path="/blog" />;
 }

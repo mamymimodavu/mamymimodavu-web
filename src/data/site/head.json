@@ -1,0 +1,11 @@
+{
+  "favicon": "https://basekit-packages.s3.amazonaws.com/WS_favicon_NAVY-BACKGROUND.ico",
+  "stylesheet": null,
+  "scripts": [
+    "https://55b558c7-resources.vlastnawebstranka.websupport.sk/0df2651/sk/translations.js?sections=widgets,mobile,shared_views,shared_components",
+    "https://55b558c7-resources.vlastnawebstranka.websupport.sk/25b750331a/compiled/published-v10-site-libs.js",
+    "https://55b558c7-resources.vlastnawebstranka.websupport.sk/25b750331a/compiled/published-v8-site.js",
+    "https://55b558c7-resources.vlastnawebstranka.websupport.sk/25b750331a/compiled/twig-widget-views-v2.js",
+    "https://55b558c7-resources.vlastnawebstranka.websupport.sk/25b750331a/compiled/scroll-out.js"
+  ]
+}

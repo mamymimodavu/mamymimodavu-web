@@ -1,15 +1,16 @@
-import Link from "next/link";
+import type { Metadata } from "next";
+import BaseKitSitePage from "@/components/basekit/BaseKitSitePage";
+import { getSitePage } from "@/lib/site-content";
 
-export default function CartPage() {
-  return (
-    <section className="page page--narrow">
-      <article className="page-card">
-        <h1>Košík</h1>
-        <p className="lead">Objednávky zatiaľ riešime individuálne. Vyber produkt v obchode alebo nás kontaktuj cez Instagram.</p>
-        <Link href="/store" className="btn">
-          Do obchodu
-        </Link>
-      </article>
-    </section>
-  );
+const page = getSitePage("/store/cart");
+
+export const metadata: Metadata = page
+  ? {
+      title: page.meta.title,
+      description: page.meta.description,
+    }
+  : { title: "Košík" };
+
+export default function StoreCartPage() {
+  return <BaseKitSitePage path="/store/cart" />;
 }
